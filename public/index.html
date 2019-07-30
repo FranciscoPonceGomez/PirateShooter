@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Babylon.js sample code</title>
+    <title>Pirate Shooter</title>
 
     <!-- Babylon.js -->
     <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
@@ -50,7 +50,7 @@
         // Camera
         var camera = new BABYLON.FreeCamera(
           "camera1",
-          new BABYLON.Vector3(0, 5, -5),
+          new BABYLON.Vector3(15, 5, -15),
           scene
         );
         camera.attachControl(canvas, true);
@@ -167,7 +167,7 @@
           scene
         );
         waterMaterial.windForce = -10;
-        waterMaterial.waveHeight = 0.5;
+        waterMaterial.waveHeight = 0.9;
         waterMaterial.bumpHeight = 0.1;
         waterMaterial.waveLength = 0.1;
         waterMaterial.waveSpeed = 50.0;
@@ -222,7 +222,7 @@
         // sphere.material = sphereMaterial;
 
         // Configure water material
-        waterMaterial.addToRenderList(ground);
+        // waterMaterial.addToRenderList(ground);
         waterMaterial.addToRenderList(skybox);
         waterMaterial.addToRenderList(carBody);
 
@@ -255,7 +255,7 @@
         carBody.position.y = 500;
 
         // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-        var ground = BABYLON.Mesh.CreateGround("ground1", 500, 500, 10, scene);
+        // var ground = BABYLON.Mesh.CreateGround("ground1", 500, 500, 10, scene);
 
         var ball = BABYLON.Mesh.CreateSphere("ball1", 16, 0.5, scene);
         ball.parent = camera;
@@ -279,12 +279,12 @@
           { mass: 1, restitution: 0 },
           scene
         );
-        ground.physicsImpostor = new BABYLON.PhysicsImpostor(
-          ground,
-          BABYLON.PhysicsImpostor.BoxImpostor,
-          { mass: 0, restitution: 0 },
-          scene
-        );
+        // ground.physicsImpostor = new BABYLON.PhysicsImpostor(
+        //   ground,
+        //   BABYLON.PhysicsImpostor.BoxImpostor,
+        //   { mass: 0, restitution: 0 },
+        //   scene
+        // );
 
         var transformForce = function(mesh, vec) {
           var mymatrix = new BABYLON.Matrix();
@@ -314,7 +314,7 @@
               { mass: 0.25, restitution: 0 },
               scene
             );
-            translate(shootedball, camera.getForwardRay().direction, 10);
+            translate(shootedball, camera.getForwardRay().direction, 20);
           }
           if (e.button === right) {
             var shootedball = ball.createInstance("shootedball");
