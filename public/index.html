@@ -50,7 +50,7 @@
         // Camera
         var camera = new BABYLON.FreeCamera(
           "camera1",
-          new BABYLON.Vector3(0, 2, -5),
+          new BABYLON.Vector3(0, 5, -5),
           scene
         );
         camera.attachControl(canvas, true);
@@ -96,7 +96,7 @@
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
         skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-          "assets/skybox/TropicalSunnyDay",
+          "/assets/skybox/TropicalSunnyDay",
           scene
         );
         skyboxMaterial.reflectionTexture.coordinatesMode =
@@ -113,7 +113,7 @@
           new BABYLON.Vector2(512, 512)
         );
         waterMaterial.bumpTexture = new BABYLON.Texture(
-          "assets/waterbump.png",
+          "/assets/waterbump.png",
           scene
         );
         waterMaterial.windForce = -10;
@@ -126,7 +126,7 @@
         waterMaterial.colorBlendFactor = 0;
 
         // Ground
-        var groundTexture = new BABYLON.Texture("assets/sand.jpg", scene);
+        var groundTexture = new BABYLON.Texture("/assets/sand.jpg", scene);
         groundTexture.vScale = groundTexture.uScale = 4.0;
 
         var groundMaterial = new BABYLON.StandardMaterial(

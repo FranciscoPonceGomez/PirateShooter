@@ -1,0 +1,29 @@
+{
+  "name": "pirateshooter",
+  "version": "1.0.0",
+  "description": "shooting pirates",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoPonceGomez/PirateShooter.git"
+  },
+  "keywords": [
+    "pirates",
+    "shooter",
+    "fps"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciscoPonceGomez/PirateShooter/issues"
+  },
+  "homepage": "https://github.com/FranciscoPonceGomez/PirateShooter#readme",
+  "dependencies": {
+    "serve": "^11.1.0",
+    "server": "^1.0.19"
+  }
+}
