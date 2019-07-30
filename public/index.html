@@ -207,24 +207,23 @@
         );
         waterMesh.material = waterMaterial;
 
-        // Sphere
-        var sphereMaterial = new BABYLON.StandardMaterial(
-          "sphereMaterial",
-          scene
-        );
-        sphereMaterial.diffuseTexture = new BABYLON.Texture(
-          "/assets/wood.jpg",
-          scene
-        );
+        // // Sphere
+        // var sphereMaterial = new BABYLON.StandardMaterial(
+        //   "sphereMaterial",
+        //   scene
+        // );
+        // sphereMaterial.diffuseTexture = new BABYLON.Texture(
+        //   "/assets/wood.jpg",
+        //   scene
+        // );
 
-        var sphere = BABYLON.Mesh.CreateSphere("sphere", 16, 10, scene);
-        sphere.position.y = 20;
-        sphere.material = sphereMaterial;
+        // var sphere = BABYLON.Mesh.CreateSphere("sphere", 16, 10, scene);
+        // sphere.position.y = 20;
+        // sphere.material = sphereMaterial;
 
         // Configure water material
         waterMaterial.addToRenderList(ground);
         waterMaterial.addToRenderList(skybox);
-        waterMaterial.addToRenderList(sphere);
         waterMaterial.addToRenderList(carBody);
 
         ////////// RAY CAST TO FIND WATER HEIGHT ////////////
@@ -250,7 +249,7 @@
         light.intensity = 0.7;
 
         // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
-        var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 1, scene);
+        // var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 1, scene);
 
         // Move the sphere upward 1/2 its height
         carBody.position.y = 500;
@@ -275,7 +274,7 @@
         );
 
         carBody.physicsImpostor = new BABYLON.PhysicsImpostor(
-          sphere,
+          carBody,
           BABYLON.PhysicsImpostor.BoxImpostor,
           { mass: 1, restitution: 0 },
           scene
